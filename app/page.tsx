@@ -167,10 +167,13 @@ const results = [
   { title: "Toxina Botulínica", category: "Rejuvenescimento" },
 ];
 
+const WHATSAPP_URL =
+  "https://wa.me/5543996786101?text=Olá%2C%20gostaria%20de%20agendar%20uma%20consulta%20com%20a%20Dra.%20Fernanda.";
+
 function GoldButton({
   children,
   variant = "solid",
-  href = "#agendar",
+  href = WHATSAPP_URL,
 }: {
   children: React.ReactNode;
   variant?: "solid" | "ghost";
@@ -233,7 +236,9 @@ export default function Landing() {
             <a href="#agendar" className="hover:text-primary transition">Agendar</a>
           </nav>
           <a
-            href="#agendar"
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden md:inline-block text-xs tracking-widest uppercase border-b border-primary text-primary pb-1 hover:opacity-80"
           >
             Agendar
@@ -572,7 +577,9 @@ export default function Landing() {
           </p>
           <div className="mt-12 flex justify-center">
             <a
-              href="#"
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group inline-flex items-center gap-3 px-10 py-5 text-sm tracking-wider uppercase bg-primary text-primary-foreground hover:opacity-90 transition"
               style={{ boxShadow: "var(--shadow-gold)" }}
             >
