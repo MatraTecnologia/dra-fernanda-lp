@@ -159,12 +159,12 @@ const faqs = [
 ];
 
 const results = [
-  { title: "Harmonização Facial", category: "Facial" },
-  { title: "Preenchimento Labial", category: "Lábios" },
-  { title: "Preenchimento de Glúteos", category: "Corporal" },
-  { title: "Definição Corporal", category: "Corporal" },
-  { title: "Bioestimulador de Glúteos", category: "Corporal" },
-  { title: "Toxina Botulínica", category: "Rejuvenescimento" },
+  { title: "Harmonização Facial", category: "Facial", image: "/result-harmonizacao.jpg" },
+  { title: "Preenchimento Labial", category: "Lábios", image: "/result-labios.png" },
+  { title: "Preenchimento de Glúteos", category: "Corporal", image: "/result-gluteos.png" },
+  { title: "Definição Corporal", category: "Corporal", image: "/result-corporal.jpg" },
+  { title: "Bioestimulador de Glúteos", category: "Corporal", image: "/result-bioestimulador.png" },
+  { title: "Toxina Botulínica", category: "Rejuvenescimento", image: "/result-toxina.png" },
 ];
 
 const WHATSAPP_URL =
@@ -494,13 +494,16 @@ export default function Landing() {
             {results.map((r, i) => (
               <figure
                 key={i}
-                className="group relative overflow-hidden bg-background aspect-[3/4] flex flex-col items-center justify-center text-center px-4 border border-dashed border-primary/40"
+                className="group relative overflow-hidden bg-background aspect-[3/4]"
               >
-                <Gem className="w-6 h-6 text-primary/60" strokeWidth={1.2} />
-                <span className="mt-3 hairline text-foreground/50">{r.title}</span>
-                <figcaption className="absolute inset-x-0 bottom-0 p-4">
-                  <div className="hairline text-primary">{r.category}</div>
-                  <div className="font-display text-base mt-1">{r.title}</div>
+                <img
+                  src={r.image}
+                  alt={r.title}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <figcaption className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/60 to-transparent">
+                  <div className="hairline text-white/70">{r.category}</div>
+                  <div className="font-display text-base mt-1 text-white">{r.title}</div>
                 </figcaption>
               </figure>
             ))}
